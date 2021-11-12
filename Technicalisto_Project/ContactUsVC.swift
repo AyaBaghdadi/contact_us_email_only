@@ -9,7 +9,7 @@ import MessageUI
 
 class ContactUsVC: UIViewController, MFMailComposeViewControllerDelegate{
 
-    var email = "technicalisto@gmail.com"
+    var email = "YourSendEmail"
 
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,7 +33,7 @@ func sendEmailNormal(){
     let mc: MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self
         mc.setSubject(emailTitle)
-        mc.setMessageBody(messageBody, isHTML: false)
+        mc.setMessageBody(messageBody, isHTML: true)
         mc.setToRecipients(toRecipents)
 
     self.present(mc, animated: true, completion: nil)
@@ -45,7 +45,7 @@ func sendEmailNormal(){
 func sendEmailHtml(){
     
     let emailTitle = "Technicalisto"
-    let messageBody = "<html><body><p>Header: Hello Test Email</p><p></p></body></html>"
+    let messageBody = "<html><body><h1>Header: Hello Test Email</h1><p>jgkjgjkfhj</p></body></html>"
 
     let toRecipents = [self.email]
             
